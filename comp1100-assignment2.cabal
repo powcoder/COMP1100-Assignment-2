@@ -1,0 +1,41 @@
+name:                comp1100-assignment2
+synopsis:            COMP1100 Assignment 2 - Turtle Graphics
+version:             0.1.0.0
+license:             AllRightsReserved
+author:              Jack Kelly
+maintainer:          jack@jackkelly.name
+copyright:           2018 The Australian National University
+category:            Graphics
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     App
+                     , Automata
+                     , AutomataTest
+                     , GridRenderer
+                     , TestPatterns
+                     , Testing
+  build-depends:       base >= 4.7 && < 5
+                     , codeworld-api >= 0.4.0 && < 0.5
+                     , text >= 1.2.3.1 && < 1.3
+  hs-source-dirs:      src
+  ghc-options:         -Wall
+  default-language:    Haskell2010
+
+executable automata
+  main-is:             Main.hs
+  build-depends:       base
+                     , comp1100-assignment2
+  hs-source-dirs:      app
+  ghc-options:         -threaded -Wall
+  default-language:    Haskell2010
+
+test-suite automata-test
+  type:                exitcode-stdio-1.0
+  main-is:             Main.hs
+  build-depends:       base
+                     , comp1100-assignment2
+  hs-source-dirs:      test
+  ghc-options:         -threaded -Wall
+  default-language:    Haskell2010
